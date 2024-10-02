@@ -1,0 +1,62 @@
+//get a list of books
+GET http://localhost:8080/books
+Accept: application/v2+json
+
+###
+GET http://localhost:8080/books/123
+X-API-VERSION:1
+
+
+###
+GET http://localhost:8080/books/123
+X-API-VERSION:2
+
+
+
+###
+POST http://localhost:8080/v1/books
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Learn Algorithms",
+  "isbn": "2334324",
+  "price": 4343.88
+}
+
+###
+POST http://localhost:8080/v2/books
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Learn Algorithms V2",
+  "isbn": "2334324",
+  "price": 4343.88
+}
+
+###
+PUT http://localhost:8080/books/123?version=1
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "Learn Algorithms",
+  "isbn": "2334324",
+  "price": 4343.88
+}
+
+###
+PUT http://localhost:8080/books/123?version=2
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "Learn Algorithms V2",
+  "isbn": "2334324",
+  "price": 4343.88
+}
+
+
+###
+DELETE http://localhost:8080/books/123
